@@ -1,0 +1,2 @@
+#define p(x) for(int i=0;i<x;i++)
+r[10],M,n,m,a;f(u,c){if(u<=999999){int k=abs(u-n);M=M>k+c?k+c:M;p(10)if((u||i)&&!r[i])f(u*10+i,c+1);}}main(){scanf("%d%d",&n,&m);p(m){scanf("%d",&a);r[a]=1;}M=abs(n-100);p(10)if(!r[i])f(i,1);printf("%d",M);}
