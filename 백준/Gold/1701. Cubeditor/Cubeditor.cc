@@ -1,0 +1,2 @@
+#include <bits/stdc++.h>
+using namespace std;int l;vector<int>f(string A){int z=A.size();vector<int>T(z,0);int j=0;for(int i=1;i<z;i++){while(j>0&&A[i]!=A[j])j=T[j-1];if(A[i]==A[j])T[i]=++j;}return T;}main(){string a;cin>>a;int W=a.size();for(int i=0;i<W;i++){string B=a.substr(i,W+1);vector<int>E=f(B);int Y=E.size();for(int j=0;j<Y;j++)l=max(l,E[j]);}printf("%d",l);}
