@@ -1,0 +1,2 @@
+#include <bits/stdc++.h>
+int l,c,i,t;char a[20],h[20],p[20];void f(int n, int C){if(C==l){int m=0,J=0;for(t=0;t<C;t++){if(p[t]=='a'||p[t]=='e'||p[t]=='i'||p[t]=='o'||p[t]=='u')m++;else J++;}if(m>0&&J>1){for(t=0;t<C;t++)printf("%c",p[t]);puts("");}return;}for(int j=n;j<c;j++){if(!h[j]){h[j]=1;p[C]=a[j];f(j+1,C+1);h[j]=0;}}}main(){scanf("%d%d",&l,&c);for(i=0;i<c;i++)scanf(" %c",&a[i]);std::sort(a,a+c);f(0,0);}
