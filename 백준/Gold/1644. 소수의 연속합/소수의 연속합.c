@@ -1,0 +1,1 @@
+n=4000000,r[4000001]={1},a,s,c;main(i,j){for(i=2;i*i<=n;i++)if(!r[i])for(j=i*i;j<=n;j+=i)r[j]=1;scanf("%d",&a);j=2;for(i=2;i<=a;i++){if(!r[i]){while(s<a&&i<=j){if(!r[j])s+=j;j++;}if(s==a)c++;s-=i;}}printf("%d",c);}
