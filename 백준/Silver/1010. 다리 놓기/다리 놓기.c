@@ -1,0 +1,1 @@
+d[31][31];f(a,b){if(d[a][b])return d[a][b];if(b==1)return d[a][b]=a;if(a==b)return d[a][b]=1;return d[a][b]=f(a-1,b)+f(a-1,b-1);}main(n,a,b){for(scanf("%d",&n);n--;printf("%d\n",f(b,a)))scanf("%d %d",&a,&b);}
