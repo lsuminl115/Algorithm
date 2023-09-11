@@ -1,0 +1,2 @@
+#include <bits/stdc++.h>
+using namespace std;struct c{bool operator()(int a, int b){return a>b;}};vector<int>v[32001];priority_queue<int,vector<int>,c>q;int n,m,a,b,r[32001],i,j,t[32001],x,y;void o(){for(i=1;i<=n;i++)if(!t[i])q.push(i);for(i=0;i<n;i++,printf("%d ",x)){x=q.top();q.pop();for(j=0;j<v[x].size();j++){y=v[x][j];if(!--t[y])q.push(y);}}}main(){scanf("%d%d",&n,&m);for(i=0;i<m;i++){scanf("%d%d",&a,&b);v[a].push_back(b);t[b]++;}o();}
