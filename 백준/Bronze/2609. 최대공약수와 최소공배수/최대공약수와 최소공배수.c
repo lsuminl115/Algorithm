@@ -1,0 +1,1 @@
+g(a,b){return!b?a:g(b,a%b);}main(a,b,c){scanf("%d%d",&a,&b);c=g(a,b);printf("%d\n%d",c,a*b/c);}
