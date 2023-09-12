@@ -1,0 +1,1 @@
+main(n,a,b){for(scanf("%d",&n);n--;)puts(a<b?"NO BRAINS":"MMM BRAINS",scanf("%d %d",&a,&b));}
