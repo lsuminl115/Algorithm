@@ -1,0 +1,1 @@
+dp[31]={1,0,3};main(n,i,j){scanf("%d",&n);for(i=4;i<=n;i++)for(j=2;j<=i;j+=2)dp[i]+=dp[i-j]*(j==2?3:2);printf("%d",dp[n]);}
