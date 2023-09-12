@@ -1,0 +1,2 @@
+#include <bits/stdc++.h>
+int n,a,s,i;using namespace std;main(){vector<int>v;scanf("%d",&n);for(i=0;i<n;i++,v.push_back(a))scanf("%d",&a);sort(v.rbegin(),v.rend());for(i=0;i<n;i++)s=s<v[i]*(i+1)?v[i]*(i+1):s;printf("%d",s);}
