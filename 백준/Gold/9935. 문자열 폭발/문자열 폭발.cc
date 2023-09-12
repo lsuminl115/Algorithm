@@ -1,0 +1,2 @@
+#include <bits/stdc++.h>
+using namespace std;char a[1000001],b[37];main(){scanf("%s",&a);scanf("%s",&b);vector<char>v;int A=strlen(a),B=strlen(b),i,O,j;for(i=0;i<A;i++){v.push_back(a[i]);if(v.size()>=B){O=1;for(int j=0;j<B;j++)if(v[v.size()-B+j]!=b[j])O=0;if(O)for(j=0;j<B;j++)v.pop_back();}}if(v.empty())printf("FRULA");else for(i=0;i<v.size();i++)printf("%c",v[i]);}
