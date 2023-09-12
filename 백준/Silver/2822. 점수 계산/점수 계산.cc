@@ -1,0 +1,2 @@
+#include <bits/stdc++.h>
+typedef struct{int c,d;}st;using namespace std;bool f(st a,st b){return a.c>b.c;}int i,u;int main(){vector<st>q;vector<int>w;for(i=1;i<=8;i++){st s;scanf("%d",&s.c);s.d=i;q.push_back(s);}sort(q.begin(),q.end(),f);for(i=0;i<5;i++){u+=q[i].c;w.push_back(q[i].d);}sort(w.begin(),w.end());printf("%d\n",u);for(i=0;i<5;i++)printf("%d ",w[i]);}
