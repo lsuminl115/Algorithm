@@ -1,0 +1,3 @@
+#include <stdio.h>
+#include <queue>
+using namespace std;queue<int> x,y;int n,m,q[200][200],c[200][200];int check(int x, int y){if(x<1||x>n||y<1||y>m||q[x][y]=='0'||c[x][y])return 0;return 1;}void bfs(){int k,a,b,i,cnt=1;while(!x.empty()){k=x.size();for(i=1;i<=k;i++){a=x.front();b=y.front();x.pop();y.pop();if(c[a][b])continue;else if(a==n&&b==m){printf("%d",cnt);return;}c[a][b]=1;if(check(a-1,b)){x.push(a-1);y.push(b);}if(check(a+1,b)){x.push(a+1);y.push(b);}if(check(a,b-1)){x.push(a);y.push(b-1);}if(check(a,b+1)){x.push(a);y.push(b+1);}}cnt++;}}main(){int i,j;scanf("%d %d",&n,&m);for(i=1;i<=n;i++)for(j=1;j<=m;j++)scanf(" %c",&q[i][j]);x.push(1);y.push(1);bfs();}
