@@ -1,0 +1,2 @@
+#include <bits/stdc++.h>
+typedef struct{int u,d;}q;int r[500001],n,a,i;int main(){std::stack<q>s;scanf("%d",&n);for(i=0;i<n;i++){scanf("%d",&a);while(!s.empty()){if(s.top().u>a)break;s.pop();}if(!s.empty())r[i]=s.top().d;s.push({a,i+1});}for(i=0;i<n;i++)printf("%d ",r[i]);}
