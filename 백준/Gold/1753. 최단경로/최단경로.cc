@@ -1,61 +1,56 @@
 #include <bits/stdc++.h>
-#define INF 123456789
 using namespace std;
 typedef struct {
-    int node;
-    int dis;
+    int current;
+    int distance;
 }st;
 struct compare {
-    bool operator()(st a, st b)
-    {
-        return a.dis > b.dis;
+    bool operator()(st a, st b) {
+        return a.distance > b.distance;
     }
 };
-vector<st> vec[20001];
 int dis[20001];
-void f(int start)
-{
-    priority_queue<st, vector<st>, compare> pq;
-    dis[start] = 0;
+vector<st> arr[20001];
 
+void dijkstra(int start) {
+    dis[start] = 0;
+    priority_queue<st, vector<st>, compare> pq;
     pq.push({start, 0});
-    while(!pq.empty())
-    {
-        st a = pq.top();
+
+    while(!pq.empty()) {
+        int current = pq.top().current;
+        int distance = pq.top().distance;
+
         pq.pop();
 
-        if(dis[a.node] < a.dis) continue;
+        if(dis[current] < distance) continue;
 
-        for(int i=0; i<vec[a.node].size(); i++)
-        {
-            st b = vec[a.node][i];
-            if(dis[b.node] > a.dis + b.dis)
-            {
-                dis[b.node] = a.dis + b.dis;
-                pq.push({b.node, a.dis + b.dis});
+        for(int i=0; i<arr[current].size(); i++) {
+            int next = arr[current][i].current;
+            int next_distance = distance + arr[current][i].distance;
+            if(next_distance < dis[next]) {
+                dis[next] = next_distance;
+                pq.push({next, next_distance});
             }
         }
     }
 }
+int main() {
 
+    int vertex, edge, start, u, v, w;
+    scanf("%d %d",&vertex,&edge);
+    scanf("%d",&start);
 
-int main()
-{
-    int v,e,k,a,b,c;
-    scanf("%d %d",&v,&e);
-    scanf("%d",&k);
-    for(int i=1; i<=v; i++) dis[i] = INF;
-    for(int i=0; i<e; i++)
-    {
-        scanf("%d %d %d",&a,&b,&c);
-        vec[a].push_back({b, c});
+    for(int i=1; i<=vertex; i++) dis[i] = 987654321;
+
+    for(int i=0; i<edge; i++) {
+        scanf("%d %d %d",&u, &v, &w);
+        arr[u].push_back({v, w});
     }
-    f(k);
-
-    for(int i=1; i<=v; i++,puts(""))
-    {
-        if(dis[i] == INF) printf("INF");
-        else printf("%d",dis[i]);
+    dijkstra(start);
+    for(int i=1; i<=vertex; i++) {
+        if(dis[i] == 987654321) printf("INF\n");
+        else printf("%d\n", dis[i]);
     }
     return 0;
 }
